@@ -42,18 +42,26 @@ class DeliveryLogsController {
   }
 
   async show(req: Request, res: Response) {
+    // Valida o o params da requisição
     const paramsSchema = z.object({
       delivery_id: z.string().uuid()
     })
 
     const { delivery_id } = paramsSchema.parse(req.params)
 
+    // Busca no banco de dados as informações do delivery
+    // e os logs relacionados a ele
     const delivery = await prisma.delivery.findUnique({
       where: {
         id: delivery_id
+      },
+      include: {
+        logs: true,
+        user: true,
       }
     })
 
+    // Se o usuário for um cliente e ele tentar acessar o log de outro cliente, retorna erro 401
     if (req.user?.role === "customer" && req.user.id !== delivery?.userId) {
       throw new AppError("Unauthorized", 401)
     }
