@@ -98,7 +98,7 @@ collection:
         meta:
           id: req_785ce3a01b7b44518b0f6a3e1522d89b
           created: 1743031634083
-          modified: 1743121065237
+          modified: 1743260216944
           isPrivate: false
           sortKey: -1743031634083
         method: POST
@@ -106,8 +106,8 @@ collection:
           mimeType: application/json
           text: |-
             {
-            	"user_id": "28253b02-c096-440c-96ab-d6d17d864bee",
-            	"description": "Mouse"
+            	"user_id": "acc821a0-0eec-4d00-8548-0a4344fe462e",
+            	"description": "Monitor 144hz"
             }
         headers:
           - name: Content-Type
@@ -198,7 +198,7 @@ collection:
         meta:
           id: req_7c04fc488a544ecf81c7d9ce45bb3a06
           created: 1743122934426
-          modified: 1743123616759
+          modified: 1743260306721
           isPrivate: false
           sortKey: -1743122934426
         method: POST
@@ -206,8 +206,8 @@ collection:
           mimeType: application/json
           text: |-
             {
-            	"delivery_id": "ebb847e-7f96-4e82-ad88-a03951925833",
-            	"description": "Chegou em Cajamar/SP"
+            	"delivery_id": "5b96a916-1822-442c-867d-4b27a2eed029",
+            	"description": "Pedido coletado"
             }
         headers:
           - name: Content-Type
@@ -227,12 +227,12 @@ collection:
             store: true
           rebuildPath: true
       - url: "{{ _[''].BASE_URL }}/{{ _[''].RESOURCE
-          }}/ebb84a7e-7f96-4e82-ad88-a03951925833/show"
+          }}/5b96a916-1822-442c-867d-4b27a2eed029/show"
         name: Show
         meta:
           id: req_b1ba766e4e714e8297990dc42ca59d3b
           created: 1743124732721
-          modified: 1743126724721
+          modified: 1743260270873
           isPrivate: false
           sortKey: -1743124732721
         method: GET
