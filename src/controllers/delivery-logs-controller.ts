@@ -25,6 +25,10 @@ class DeliveryLogsController {
       throw new AppError("Delivery not found", 404)
     }
 
+    if (delivery.status === "delivered") {
+      throw new AppError("Delivery already delivered", 400)
+    }
+
     // Caso o status seja "processing", avisa que é necessário mudar para "shipped"
     if (delivery.status === "processing") {
       throw new AppError("Change status to shipped", 400)
