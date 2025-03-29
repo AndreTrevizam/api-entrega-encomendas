@@ -4,7 +4,6 @@ import { hash } from "bcrypt"
 import { prisma } from "@/database/prisma"
 import { AppError } from "@/utils/AppError"
 
-
 class UsersController {
     async create(req: Request, res: Response) {
         // Validando os dados de entrada
