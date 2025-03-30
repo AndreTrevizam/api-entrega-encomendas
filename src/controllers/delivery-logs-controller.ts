@@ -45,7 +45,7 @@ class DeliveryLogsController {
     return res.status(201).json()
   }
 
-  async show(req: Request, res: Response) {
+   async show(req: Request, res: Response) {
     // Valida o o params da requisição
     const paramsSchema = z.object({
       delivery_id: z.string().uuid()
@@ -64,6 +64,10 @@ class DeliveryLogsController {
         user: true,
       }
     })
+
+    if (!delivery) {
+      return res.status(404).json({ message: "Delivery not found" })
+    }
 
     // Se o usuário for um cliente e ele tentar acessar o log de outro cliente, retorna erro 401
     if (req.user?.role === "customer" && req.user.id !== delivery?.userId) {
